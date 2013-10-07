@@ -9,6 +9,6 @@ run lambda { |env|
   [200, headers, [body]]
 }
 
-# curl http://localhost:9292
+# curl http://localhost:9292 -H "Accept-Language: es, en"
 
-# Current locale is: en
+# Current locale is: es

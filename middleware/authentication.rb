@@ -26,7 +26,10 @@ module Middleware
   private
 
     def public?
-      PUBLIC_ENDPOINTS.any? { |verb, endpoints| verb == @req.request_method && endpoints.include?(@req.path) }
+      PUBLIC_ENDPOINTS.any? do |verb, endpoints|
+        verb == @req.request_method &&
+          endpoints.include?(@req.path)
+      end
     end
 
     def current_user(auth_token)
